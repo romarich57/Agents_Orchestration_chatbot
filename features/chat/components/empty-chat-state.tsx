@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { MessageSquarePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const EmptyChatState = ({
@@ -8,21 +8,19 @@ export const EmptyChatState = ({
 }: {
   onCreateConversation: () => void;
 }) => (
-  <div className="flex h-full flex-col items-center justify-center px-6 text-center">
-    <div className="glass-panel max-w-2xl rounded-[2rem] border border-[color:var(--border)] px-8 py-10">
-      <div className="mx-auto mb-5 flex size-14 items-center justify-center rounded-2xl bg-[color:var(--accent)] text-white">
-        <Sparkles className="size-6" />
+  <div className="flex h-full flex-col items-center justify-center px-6 text-center animate-fade-in">
+    <div className="max-w-md w-full rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
+      <div className="mx-auto mb-6 flex size-12 items-center justify-center rounded-2xl bg-[color:var(--surface-strong)] border border-[color:var(--border)] text-[color:var(--foreground)]">
+        <MessageSquarePlus className="size-5 opacity-70" />
       </div>
-      <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold">
-        Un cockpit conversationnel prêt pour Sim Studio
+      <h1 className="font-[family-name:var(--font-display)] text-xl font-semibold mb-2 text-[color:var(--foreground)]">
+        Démarrer une nouvelle session
       </h1>
-      <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
-        Crée une conversation, envoie un prompt et observe la réponse arriver en temps
-        réel. Les titres, messages, pièces jointes et statuts restent persistés dans ton
-        backend.
+      <p className="text-[0.9375rem] text-[color:var(--muted-foreground)] mb-8 max-w-sm mx-auto">
+        Lancez une conversation pour interagir avec les modèles d'intelligence artificielle configurés pour votre environnement.
       </p>
-      <Button className="mt-8" onClick={onCreateConversation}>
-        Démarrer une conversation
+      <Button className="w-full sm:w-auto" onClick={onCreateConversation}>
+        Nouvelle conversation
       </Button>
     </div>
   </div>

@@ -3,7 +3,7 @@ import rehypeSanitize from "rehype-sanitize";
 import remarkGfm from "remark-gfm";
 
 export const Markdown = ({ content }: { content: string }) => (
-  <div className="rich-markdown text-sm leading-7 text-[color:var(--foreground)]">
+  <div className="rich-markdown text-[0.9375rem] leading-relaxed text-[color:var(--foreground)] w-full break-words">
     <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSanitize]}>
       {content}
     </ReactMarkdown>

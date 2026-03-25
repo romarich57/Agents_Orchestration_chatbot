@@ -11,7 +11,7 @@ export const IconButton = ({
   <button
     type={type}
     className={cn(
-      "inline-flex size-9 items-center justify-center rounded-xl border border-[color:var(--border)] bg-white/40 text-[color:var(--foreground)] transition hover:bg-white/80 dark:bg-white/5 dark:hover:bg-white/10",
+      "inline-flex size-9 items-center justify-center rounded-lg text-[color:var(--muted-foreground)] transition-colors duration-200 hover:bg-[color:var(--surface-hover)] hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] disabled:pointer-events-none disabled:opacity-50",
       className,
     )}
     {...props}

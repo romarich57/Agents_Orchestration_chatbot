@@ -12,12 +12,12 @@ export const ChatShell = ({
   initialConversations: ConversationSummaryDto[];
   children: ReactNode;
 }) => (
-  <div className="app-shell flex min-h-screen">
+  <div className="app-shell flex min-h-screen bg-[color:var(--background)]">
     <ConversationSidebar initialConversations={initialConversations} />
-    <div className="flex min-h-screen min-w-0 flex-1 flex-col md:pl-0">
-      <div className="surface-panel m-3 flex min-h-[calc(100vh-1.5rem)] min-w-0 flex-1 flex-col overflow-hidden rounded-[2rem]">
+    <div className="flex min-h-screen min-w-0 flex-1 flex-col">
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col bg-[color:var(--surface)] shadow-[-4px_0_24px_-8px_rgba(0,0,0,0.05)] md:rounded-l-2xl border-l border-[color:var(--border)] overflow-hidden">
         <ChatHeader />
-        <main className="min-h-0 flex-1">{children}</main>
+        <main className="min-h-0 flex-1 flex flex-col">{children}</main>
       </div>
     </div>
   </div>
