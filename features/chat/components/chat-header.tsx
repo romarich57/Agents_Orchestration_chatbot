@@ -9,17 +9,17 @@ export const ChatHeader = () => {
   const setMobileSidebarOpen = useChatUiStore((state) => state.setMobileSidebarOpen);
 
   return (
-    <header className="flex items-center justify-between gap-4 border-b border-[color:var(--border)] px-6 py-4">
+    <header className="flex items-center justify-between gap-4 border-b border-[color:var(--border)] bg-[color:var(--workspace-surface)] px-6 py-4">
       <div className="flex items-center gap-3">
         <IconButton
-          className="md:hidden"
+          className="md:hidden hover:bg-[color:var(--accent-soft)]"
           aria-label="Ouvrir la sidebar"
           onClick={() => setMobileSidebarOpen(true)}
         >
           <Menu className="size-4" />
         </IconButton>
         <div>
-          <p className="font-[family-name:var(--font-display)] text-sm font-medium text-[color:var(--foreground)]">
+          <p className="font-[family-name:var(--font-display)] text-sm font-medium tracking-[0.01em] text-[color:var(--foreground)]">
             Sim Studio Chat
           </p>
         </div>

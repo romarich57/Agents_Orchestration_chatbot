@@ -36,16 +36,16 @@ export const ChatComposer = ({ conversationId }: { conversationId: string }) => 
   };
 
   return (
-    <div className="bg-[color:var(--background)] p-4 md:p-6 border-t border-[color:var(--border)]">
+    <div className="border-t border-[color:var(--border)] bg-[color:var(--workspace-surface)] p-4 md:p-6">
       <div className="max-w-3xl mx-auto w-full">
         {attachments.length > 0 ? (
           <div className="mb-3 flex flex-wrap gap-2">
             {attachments.map((attachment) => (
               <div
                 key={attachment.id}
-                className="inline-flex items-center gap-2 rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1.5 text-xs text-[color:var(--foreground)] shadow-sm"
+                className="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border-strong)] bg-[color:var(--surface-strong)] px-3 py-1.5 text-xs text-[color:var(--foreground)] shadow-[var(--shadow-sm)]"
               >
-                <Paperclip className="size-3.5 text-[color:var(--muted-foreground)]" />
+                <Paperclip className="size-3.5 text-[color:var(--accent)]" />
                 <span className="max-w-40 truncate font-medium">{attachment.previewLabel}</span>
                 <button
                   type="button"
@@ -63,7 +63,7 @@ export const ChatComposer = ({ conversationId }: { conversationId: string }) => 
           </div>
         ) : null}
 
-        <div className="relative flex items-end gap-2 rounded-2xl bg-[color:var(--surface)] border border-[color:var(--border)] p-2 shadow-sm focus-within:ring-1 focus-within:ring-[color:var(--accent)] focus-within:border-[color:var(--accent)] transition-all">
+        <div className="relative flex items-end gap-2 rounded-2xl border border-[color:var(--border-strong)] bg-[color:var(--surface)] p-2 shadow-[var(--shadow-sm)] transition-[border-color,box-shadow,background-color] focus-within:border-[color:var(--accent)] focus-within:ring-2 focus-within:ring-[color:var(--focus-ring)]">
           <input
             ref={inputRef}
             type="file"
@@ -93,7 +93,7 @@ export const ChatComposer = ({ conversationId }: { conversationId: string }) => 
           <IconButton 
             aria-label="Ajouter un fichier" 
             onClick={() => inputRef.current?.click()}
-            className="mb-0.5 ml-1 size-8 text-[color:var(--muted-foreground)] hover:text-[color:var(--foreground)] hover:bg-[color:var(--surface-hover)]"
+            className="mb-0.5 ml-1 size-8 rounded-xl border-transparent text-[color:var(--muted-foreground)] hover:bg-[color:var(--accent-soft)] hover:text-[color:var(--accent-strong)]"
           >
             <Paperclip className="size-4" />
           </IconButton>
@@ -115,9 +115,9 @@ export const ChatComposer = ({ conversationId }: { conversationId: string }) => 
           <Button 
             onClick={() => void submit()} 
             disabled={sendMessage.isPending || !content.trim()}
-            className="mb-0.5 mr-1 rounded-xl px-3 py-2 h-8"
+            className="mb-0.5 mr-1 h-8 rounded-xl px-3 py-2"
           >
-            {sendMessage.isPending ? <Spinner className="size-3.5" /> : <Send className="size-3.5" />}
+            {sendMessage.isPending ? <Spinner /> : <Send className="size-3.5" />}
           </Button>
         </div>
         <p className="mt-2 text-center text-[0.65rem] text-[color:var(--muted-foreground)]">

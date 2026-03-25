@@ -30,7 +30,7 @@ export const MessageBubble = ({ message }: { message: MessageDto }) => {
           className={cn(
             "relative px-5 py-4",
             isUser
-              ? "bg-[color:var(--surface-strong)] text-[color:var(--foreground)] rounded-2xl rounded-tr-sm border border-[color:var(--border)] shadow-sm"
+              ? "rounded-2xl rounded-tr-sm border border-[color:var(--border)] bg-[color:var(--user-bubble)] text-[color:var(--foreground)] shadow-[var(--shadow-sm)]"
               : "w-full text-[color:var(--foreground)]"
           )}
         >
@@ -54,7 +54,7 @@ export const MessageBubble = ({ message }: { message: MessageDto }) => {
           ) : null}
 
           {message.error ? (
-            <div className="mt-3 flex items-start gap-2 rounded-xl bg-[color:var(--danger-foreground)] border border-[color:var(--danger)]/20 px-4 py-3 text-sm text-[color:var(--danger-hover)]">
+            <div className="mt-3 flex items-start gap-2 rounded-xl border border-[color:var(--danger)] bg-[color:var(--danger-foreground)] px-4 py-3 text-sm text-[color:var(--danger)]">
               <AlertCircle className="size-4 shrink-0 mt-0.5" />
               <p className="leading-snug">{message.error}</p>
             </div>

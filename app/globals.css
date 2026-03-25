@@ -2,32 +2,39 @@
 
 @layer base {
   :root {
-    --background: #fcfcfc;
-    --foreground: #171717;
-    
-    --surface: #ffffff;
-    --surface-strong: #f4f4f5;
-    --surface-hover: #f4f4f5;
-    
-    --muted: #737373;
-    --muted-foreground: #a3a3a3;
-    
-    --border: #e5e5e5;
-    --border-strong: #d4d4d4;
-    
-    --accent: #171717;
-    --accent-strong: #262626;
-    --accent-foreground: #fafafa;
-    
-    --danger: #ef4444;
-    --danger-foreground: #fef2f2;
-    --danger-hover: #dc2626;
-    
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-    
+    --background: #f5f1e8;
+    --background-soft: #ece5d8;
+    --foreground: #243028;
+
+    --sidebar-surface: #ebe4d7;
+    --workspace-surface: #f8f5ee;
+    --surface: #fbf8f2;
+    --surface-strong: #e7ece3;
+    --surface-hover: #dee6dc;
+    --panel-elevated: #fcfaf5;
+
+    --muted: #69776e;
+    --muted-foreground: #919a95;
+
+    --border: #d9ddd4;
+    --border-strong: #c0c8bf;
+
+    --accent: #6b8571;
+    --accent-strong: #53675a;
+    --accent-soft: #dfe7de;
+    --accent-foreground: #f8f5ef;
+    --focus-ring: rgb(107 133 113 / 0.28);
+    --user-bubble: #e8eee5;
+
+    --danger: #b97469;
+    --danger-foreground: #fff7f4;
+    --danger-hover: #a9645a;
+
+    --shadow-sm: 0 1px 2px rgb(74 82 65 / 0.08), 0 1px 1px rgb(128 115 90 / 0.05);
+    --shadow: 0 10px 28px -18px rgb(78 84 69 / 0.24), 0 8px 18px -14px rgb(130 119 94 / 0.14);
+    --shadow-md: 0 18px 42px -24px rgb(72 80 68 / 0.28), 0 12px 24px -18px rgb(126 117 93 / 0.18);
+    --shadow-lg: 0 28px 64px -30px rgb(66 73 62 / 0.32), 0 16px 34px -22px rgb(123 114 91 / 0.2);
+
     --radius-sm: 0.375rem;
     --radius: 0.5rem;
     --radius-md: 0.75rem;
@@ -40,31 +47,38 @@
   }
 
   .dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    
-    --surface: #121212;
-    --surface-strong: #171717;
-    --surface-hover: #1f1f1f;
-    
-    --muted: #a3a3a3;
-    --muted-foreground: #737373;
-    
-    --border: #262626;
-    --border-strong: #404040;
-    
-    --accent: #ededed;
-    --accent-strong: #f5f5f5;
-    --accent-foreground: #0a0a0a;
-    
-    --danger: #ef4444;
-    --danger-foreground: #fef2f2;
-    --danger-hover: #dc2626;
-    
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    --background: #171b19;
+    --background-soft: #1c2320;
+    --foreground: #edf2ee;
+
+    --sidebar-surface: #171c1a;
+    --workspace-surface: #1b201e;
+    --surface: #1f2422;
+    --surface-strong: #272f2b;
+    --surface-hover: #313a35;
+    --panel-elevated: #1e2522;
+
+    --muted: #a6b0aa;
+    --muted-foreground: #808983;
+
+    --border: #303934;
+    --border-strong: #46514b;
+
+    --accent: #95b09d;
+    --accent-strong: #b7ccbd;
+    --accent-soft: #28342d;
+    --accent-foreground: #132019;
+    --focus-ring: rgb(149 176 157 / 0.32);
+    --user-bubble: #2a332e;
+
+    --danger: #cf8a81;
+    --danger-foreground: #fff6f3;
+    --danger-hover: #de9a92;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.24), 0 1px 1px rgb(0 0 0 / 0.18);
+    --shadow: 0 12px 30px -20px rgb(0 0 0 / 0.38), 0 8px 18px -14px rgb(0 0 0 / 0.24);
+    --shadow-md: 0 20px 44px -24px rgb(0 0 0 / 0.42), 0 12px 28px -18px rgb(0 0 0 / 0.28);
+    --shadow-lg: 0 30px 68px -32px rgb(0 0 0 / 0.46), 0 18px 36px -22px rgb(0 0 0 / 0.32);
   }
 }
 
@@ -86,11 +100,19 @@ body {
 
 body {
   min-height: 100vh;
+  background-image:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--background-soft) 72%, transparent) 0%, transparent 42%),
+    radial-gradient(circle at 85% 100%, color-mix(in srgb, var(--background-soft) 58%, transparent) 0%, transparent 30%);
+  background-attachment: fixed;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.dark body {
+  background-image: none;
 }
 
 button,
@@ -129,13 +151,13 @@ code {
 }
 
 .glass-panel {
-  background-color: var(--surface);
+  background-color: var(--panel-elevated);
 }
 
 .surface-panel {
-  background-color: var(--surface);
+  background-color: var(--panel-elevated);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow);
 }
 
 .rich-markdown {
@@ -197,6 +219,9 @@ code {
 
 .rich-markdown blockquote {
   border-left: 3px solid var(--border-strong);
+  background-color: color-mix(in srgb, var(--accent-soft) 48%, transparent);
+  border-radius: var(--radius);
+  padding-block: 0.25rem;
   padding-left: 1rem;
   color: var(--muted);
   font-style: italic;

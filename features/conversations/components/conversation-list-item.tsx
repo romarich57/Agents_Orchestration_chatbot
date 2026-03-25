@@ -56,10 +56,10 @@ export const ConversationListItem = ({
     <>
       <div
         className={cn(
-          "group rounded-xl px-3 py-3 transition-colors duration-200 cursor-pointer",
+          "group cursor-pointer rounded-xl border px-3 py-3 transition-[background-color,border-color,box-shadow] duration-200",
           isActive
-            ? "bg-[color:var(--surface-strong)] shadow-sm"
-            : "hover:bg-[color:var(--surface-hover)]",
+            ? "border-[color:var(--border-strong)] bg-[color:var(--accent-soft)] shadow-[var(--shadow-sm)]"
+            : "border-transparent hover:border-[color:var(--border)] hover:bg-[color:var(--surface-hover)]",
         )}
       >
         <div className="flex items-start justify-between gap-3">
@@ -81,11 +81,11 @@ export const ConversationListItem = ({
                     setIsEditing(false);
                   }
                 }}
-                className="w-full rounded-md border border-[color:var(--border)] bg-[color:var(--surface)] px-2 py-1 text-sm outline-none focus:border-[color:var(--accent)]"
+                className="w-full rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] px-2 py-1 text-sm outline-none focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:var(--focus-ring)]"
               />
             ) : (
               <>
-                <p className={cn("truncate text-sm transition-colors", isActive ? "font-semibold text-[color:var(--foreground)]" : "font-medium text-[color:var(--muted-foreground)] group-hover:text-[color:var(--foreground)]")}>
+                <p className={cn("truncate text-sm transition-colors", isActive ? "font-semibold text-[color:var(--foreground)]" : "font-medium text-[color:var(--muted)] group-hover:text-[color:var(--foreground)]")}>
                   {conversation.title}
                 </p>
                 <p
@@ -102,7 +102,7 @@ export const ConversationListItem = ({
           <div className={cn("flex items-center gap-1 transition-opacity duration-200", isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100")}>
             <IconButton
               aria-label="Renommer"
-              className="size-7 hover:bg-[color:var(--border)] hover:text-[color:var(--foreground)] text-[color:var(--muted)]"
+              className="size-7 rounded-lg text-[color:var(--muted)] hover:border-[color:var(--border)] hover:bg-[color:var(--surface)] hover:text-[color:var(--foreground)]"
               onClick={(e) => {
                 e.preventDefault();
                 setIsEditing(true);
@@ -113,7 +113,7 @@ export const ConversationListItem = ({
             </IconButton>
             <IconButton
               aria-label="Supprimer"
-              className="size-7 hover:bg-[color:var(--danger-foreground)] hover:text-[color:var(--danger)] text-[color:var(--muted)]"
+              className="size-7 rounded-lg text-[color:var(--muted)] hover:border-[color:var(--border)] hover:bg-[color:var(--danger-foreground)] hover:text-[color:var(--danger)]"
               onClick={(e) => {
                 e.preventDefault();
                 setShowDeleteConfirm(true);

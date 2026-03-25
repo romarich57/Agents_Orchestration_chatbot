@@ -13,6 +13,7 @@ export const ThemeToggle = () => {
   return (
     <IconButton
       aria-label="Changer de thème"
+      className="rounded-full border-[color:var(--border)] bg-[color:var(--surface)] shadow-[var(--shadow-sm)] hover:border-[color:var(--border-strong)] hover:bg-[color:var(--accent-soft)]"
       disabled={!mounted}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >

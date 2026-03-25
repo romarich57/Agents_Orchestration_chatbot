@@ -51,12 +51,12 @@ export const ConfirmDialog = ({
       onClick={handleBackdropClick}
       className="backdrop:bg-black/60 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto rounded-2xl w-full max-w-sm"
     >
-      <div className="surface-panel rounded-2xl p-6 shadow-lg animate-fade-in text-left">
+      <div className="animate-fade-in rounded-2xl border border-[color:var(--border)] bg-[color:var(--panel-elevated)] p-6 text-left shadow-[var(--shadow-lg)]">
         <h2 className="text-lg font-semibold text-[color:var(--foreground)] mb-2">{title}</h2>
         <p className="text-sm text-[color:var(--muted)] mb-6">{description}</p>
         
         <div className="flex items-center justify-end gap-3 mt-6">
-          <Button variant="ghost" onClick={onCancel} disabled={isLoading}>
+          <Button variant="secondary" onClick={onCancel} disabled={isLoading}>
             {cancelLabel}
           </Button>
           <Button variant="danger" onClick={onConfirm} disabled={isLoading}>

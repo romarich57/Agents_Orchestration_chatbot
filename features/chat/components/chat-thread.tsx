@@ -15,7 +15,7 @@ export const ChatThread = ({ messages }: { messages: MessageDto[] }) => {
   }, [messages]);
 
   return (
-    <div className="flex-1 overflow-y-auto bg-[color:var(--surface)]">
+    <div className="flex-1 overflow-y-auto bg-[color:var(--workspace-surface)]">
       <div className="max-w-3xl mx-auto w-full px-4 py-8 md:px-6 md:py-10 flex flex-col min-h-full">
         {messages.length === 0 ? (
           <div className="flex flex-1 items-center justify-center text-sm text-[color:var(--muted-foreground)]">

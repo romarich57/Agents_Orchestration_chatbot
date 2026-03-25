@@ -43,26 +43,30 @@ export const ConversationSidebar = ({
         onClick={() => setMobileSidebarOpen(false)}
       />
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-[18rem] flex-col bg-[color:var(--background)] border-r border-[color:var(--border)] px-4 py-6 transition-transform duration-300 ease-in-out md:static md:z-0 md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-[18rem] flex-col border-r border-[color:var(--border)] bg-[color:var(--sidebar-surface)] px-4 py-6 transition-transform duration-300 ease-in-out md:static md:z-0 md:translate-x-0 ${
           mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="mb-6 flex items-center justify-between px-2">
           <div>
-            <p className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-wider text-[color:var(--muted-foreground)]">
+            <p className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">
               Conversations
             </p>
           </div>
         </div>
 
-        <Button className="mb-6 w-full justify-start font-medium shadow-sm" onClick={() => void handleCreate()} variant="secondary">
-          {createMutation.isPending ? <Spinner className="size-4" /> : <Plus className="size-4 opacity-70" />}
+        <Button
+          className="mb-6 w-full justify-start rounded-2xl px-5 py-3.5 text-[0.95rem] font-medium"
+          onClick={() => void handleCreate()}
+          variant="secondary"
+        >
+          {createMutation.isPending ? <Spinner /> : <Plus className="size-4 opacity-70" />}
           Nouvelle conversation
         </Button>
 
         <div className="flex-1 space-y-1 overflow-y-auto pr-1">
           {conversations.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-8 text-center text-sm text-[color:var(--muted-foreground)]">
+            <div className="rounded-xl border border-dashed border-[color:var(--border)] bg-[color:var(--panel-elevated)] px-4 py-8 text-center text-sm text-[color:var(--muted-foreground)]">
               Aucune conversation
             </div>
           ) : (
