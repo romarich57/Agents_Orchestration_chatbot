@@ -137,6 +137,51 @@ pnpm dev
 
 L’application sera disponible sur `http://localhost:3000`.
 
+## Déploiement production
+
+Le dépôt inclut une stack dédiée pour un déploiement sur VPS avec:
+
+- `docker-compose.prod.yml` pour `app + postgres + migrations`
+- `Dockerfile` multi-stage pour l’application Next.js
+- `.env.production.example` comme base de configuration
+- `deploy/nginx/chatbot.romdev.cloud.conf` pour Nginx hors Docker
+
+### 1. Préparer les variables
+
+```bash
+cp .env.production.example .env.production
+```
+
+Adapter au minimum:
+
+- `POSTGRES_PASSWORD`
+- `DATABASE_URL`
+- `APP_BASE_URL`
+- `SIM_API_KEY`
+
+### 2. Construire et migrer
+
+```bash
+docker compose -f docker-compose.prod.yml --profile ops run --rm migrate
+docker compose -f docker-compose.prod.yml up -d app postgres
+```
+
+### 3. Vérifier l’application
+
+```bash
+docker compose -f docker-compose.prod.yml ps
+curl http://127.0.0.1:3000/api/health
+```
+
+### 4. Publier avec Nginx
+
+Copier `deploy/nginx/chatbot.romdev.cloud.conf` dans `/etc/nginx/sites-available/`,
+activer le site puis générer le certificat:
+
+```bash
+sudo certbot --nginx -d chatbot.romdev.cloud
+```
+
 ## Scripts utiles
 
 ```bash
