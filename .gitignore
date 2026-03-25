@@ -6,6 +6,5 @@ test-results
 uploads
 .env
 .env.local
-pnpm-lock.yaml
 package-lock.json
 prisma/dev.db
